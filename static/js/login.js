@@ -32,7 +32,7 @@ function sign_in() {
             } else {
                 alert(response['msg'])
                 window.location.href = "/login"  //틀린값 입력시 url에 login ,password 값 남으면서 오류남 -> 코드 추가하여 해결
-            }ㄴ
+            }
         }
     });
 }
