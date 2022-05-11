@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>나의 항해일지</title>
     <!-- Bulma -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="../static/css/login.css"/>
@@ -23,26 +26,32 @@
 
     <div class="signup">
         <form>
-            <label for="chk" aria-hidden="true">Sign up</label>
-            <input type="text" name="txt" placeholder="Username" required=""/>
-            <input
-                    type="number"
-                    name="password"
-                    placeholder="Password"
-                    required=""
-            />
-            <input
-                    type="number"
-                    name="password"
-                    placeholder="Password"
-                    required=""
-            />
-            <button onclick="sign_up()">Sign up</button>
+          <label for="chk" aria-hidden="true">Sign up!!</label>
+
+          <div class="field">
+            <input type="text" id="input-username" placeholder="Username" />
+            <button class="button dup-check" id="checkUpBtn">중복확인</button>
+          </div>
+          <p id="help-id" class="help">
+            2-10자의 영문과 숫자, 특수문자(._-)만 입력 가능
+          </p>
+
+          <input type="password" id="input-password" placeholder="Password" />
+          <p id="help-password" class="help">
+            영문과 숫자 조합의 8-20자, 특수문자(!@#$%^&*) 사용 가능
+          </p>
+
+          <input type="password" id="input-password2" placeholder="Password" />
+          <p id="help-password2" class="help">
+            비밀번호를 다시 한 번 입력해주세요.
+          </p>
+          <button id="signupBtn">Sign up</button>
         </form>
     </div>
 
     <div class="login">
         <form>
+
             <label for="chk" aria-hidden="true">Login</label>
             <input
                     id="input-username"
@@ -59,8 +68,8 @@
                     required=""
             />
             <button onclick="sign_in()">Login</button>
+
         </form>
     </div>
-</div>
-</body>
+  </body>
 </html>
