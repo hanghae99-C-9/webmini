@@ -8,6 +8,7 @@
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../static/js/login.js"></script>
     <!--    Font Awesome-->
     <script src="https://kit.fontawesome.com/78f37cd3f2.js" crossorigin="anonymous"></script>
     <!-- Font Awesome CSS -->
@@ -53,49 +54,51 @@
         .banner-button_logout {
             margin-left: 5px;
         }
-      .button {
-          font-size: 13px;
-          font-weight: 600;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          margin: 55px 30px;
-      }
-      .arrow {
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
-      }
+
+        .button {
+            font-size: 13px;
+            font-weight: 600;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 55px 30px;
+        }
+
+        .arrow {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
     </style>
 </head>
 <body>
-    <div class="banner hero is-info is-bold is-medium">
-        <div class="banner-center">
-            <span class="banner-center_title">항해일지</span>
-            <span class="banner-center_subtitle">-항해99 7기-</span>
-        </div>
-        <div class="banner-button">
-            <button class="banner-button_mypage">마이페이지</button>
-            <button class="banner-button_logout">로그아웃</button>
-        </div>
+<div class="banner hero is-info is-bold is-medium">
+    <div class="banner-center">
+        <span class="banner-center_title">항해일지</span>
+        <span class="banner-center_subtitle">-항해99 7기-</span>
     </div>
-    <button class="button is-dark">Day<span>1</span></button>
-    <button class="button is-dark">Day<span>2</span></button>
-    <button class="button is-dark">Day<span>3</span></button>
-    <button class="button is-dark">Day<span>4</span></button>
-    <button class="button is-dark">Day<span>5</span></button>
-    <button class="button is-dark">Day<span>6</span></button>
-    <button class="button is-dark">Day<span>7</span></button>
-    <button class="button is-dark">Day<span>8</span></button>
-    <button class="button is-dark">Day<span>9</span></button>
-    <button class="button is-dark">Day<span>10</span></button>
-    <button class="button is-dark">Day<span>11</span></button>
-    <button class="button is-dark">Day<span>12</span></button>
-    <button class="button is-dark">Day<span>13</span></button>
-    <button class="button is-dark">Day<span>14</span></button>
-    <div class="arrow">
+    <div class="banner-button">
+        <button class="banner-button_mypage">마이페이지</button>
+        <button class="banner-button_logout" onclick="sign_out()">로그아웃</button>
+    </div>
+</div>
+<button class="button is-dark">Day<span>1</span></button>
+<button class="button is-dark">Day<span>2</span></button>
+<button class="button is-dark">Day<span>3</span></button>
+<button class="button is-dark">Day<span>4</span></button>
+<button class="button is-dark">Day<span>5</span></button>
+<button class="button is-dark">Day<span>6</span></button>
+<button class="button is-dark">Day<span>7</span></button>
+<button class="button is-dark">Day<span>8</span></button>
+<button class="button is-dark">Day<span>9</span></button>
+<button class="button is-dark">Day<span>10</span></button>
+<button class="button is-dark">Day<span>11</span></button>
+<button class="button is-dark">Day<span>12</span></button>
+<button class="button is-dark">Day<span>13</span></button>
+<button class="button is-dark">Day<span>14</span></button>
+<div class="arrow">
     <i class="fa-solid fa-arrow-left fa-6x"></i>
     <i class="fa-solid fa-arrow-right fa-6x"></i>
-        </div>
+</div>
 </body>
 </html>
