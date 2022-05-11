@@ -31,17 +31,14 @@ function sign_in() {
                 window.location.replace("/")
             } else {
                 alert(response['msg'])
-            }
+                window.location.href = "/login"  //틀린값 입력시 url에 login ,password 값 남으면서 오류남 -> 코드 추가하여 해결
+            }ㄴ
         }
     });
 }
 
-function is_nickname(asValue) {
-    var regExp = /^(?=.*[a-zA-Z])[-a-zA-Z0-9_.]{2,10}$/;
-    return regExp.test(asValue);
-}
-
-function is_password(asValue) {
-    var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z!@#$%^&*]{8,20}$/;
-    return regExp.test(asValue);
+function sign_out() {
+    $.removeCookie('mytoken', {path: '/'});
+    alert('로그아웃 하였습니다.')
+    window.location.href = "/login"
 }
