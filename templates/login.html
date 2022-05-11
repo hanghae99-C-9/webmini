@@ -37,60 +37,31 @@
           <label for="chk" aria-hidden="true">Sign up!!</label>
 
           <div class="field">
-            <input
-              type="text"
-              id="input-username"
-              name="txt"
-              placeholder="Username"
-              required=""
-            />
-            <button class="button dup-check" onclick="check_dup()">
-              중복확인
-            </button>
+            <input type="text" id="input-username" placeholder="Username" />
+            <button class="button dup-check" id="checkUpBtn">중복확인</button>
           </div>
           <p id="help-id" class="help">
             2-10자의 영문과 숫자, 특수문자(._-)만 입력 가능
           </p>
 
-          <input
-            type="password"
-            id="input-password"
-            placeholder="Password"
-            required=""
-          />
+          <input type="password" id="input-password" placeholder="Password" />
           <p id="help-password" class="help">
-            영문과 숫자 조합의 8-20자의 비밀번호를 설정해주세요.
-            특수문자(!@#$%^&*)도 사용 가능합니다.
+            영문과 숫자 조합의 8-20자, 특수문자(!@#$%^&*) 사용 가능
           </p>
 
-          <input
-            type="password"
-            id="input-password2"
-            placeholder="Password"
-            required=""
-          />
+          <input type="password" id="input-password2" placeholder="Password" />
           <p id="help-password2" class="help">
             비밀번호를 다시 한 번 입력해주세요.
           </p>
-          <button id="signupBtn" for="chk" aria-hidden="true">Sign up</button>
+          <button id="signupBtn">Sign up</button>
         </form>
       </div>
 
       <div class="login">
         <form>
           <label for="chk" aria-hidden="true">Login</label>
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            required=""
-          />
-          <input
-            type="password"
-            name="pswd"
-            placeholder="Password"
-            required=""
-          />
+          <input type="text" name="username" placeholder="Username" />
+          <input type="password" name="pswd" placeholder="Password" />
           <button onclick="log_in()">Login</button>
         </form>
       </div>
