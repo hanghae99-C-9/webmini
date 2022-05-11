@@ -50,7 +50,7 @@ input {
   background: #e0dede;
   justify-content: center;
   display: flex;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 10px;
   border: none;
   outline: none;
@@ -139,6 +139,8 @@ form {
 
 .help {
   color: white;
+  margin-top: 0px;
+  margin-bottom: 5px;
 }
 
 .help-id {

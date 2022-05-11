@@ -44,16 +44,18 @@ def sign_in():
     return jsonify({'result': 'success'})
 
 
+# 회원가입 정보 DB에 저장
 @app.route('/sign_up/save', methods=['POST'])
 def sign_up():
-    # 회원가입
     username_receive = request.form['username_give']
     password_receive = request.form['password_give']
-    password2_receive = request.form['password2_give']
-
     password_hash = hashlib.sha256(
         password_receive.encode('utf-8')).hexdigest()
-    # DB에 저장
+    doc = {
+        "username": username_receive,                               # 아이디
+        "password": password_hash,                                  # 비밀번호
+    }
+    db.users.insert_one(doc)
     return jsonify({'result': 'success'})
 
 
@@ -61,9 +63,8 @@ def sign_up():
 @app.route('/sign_up/check_dup', methods=['POST'])
 def check_dup():
     username_receive = request.form['username_give']
-    print(username_receive)
-    exits = bool(db.users.find_one({"username": username_receive}))
-    return jsonify({'exits': exits})
+    exists = bool(db.users.find_one({"username": username_receive}))
+    return jsonify({'result': 'success', 'exists': exists})
 
 
 if __name__ == '__main__':
