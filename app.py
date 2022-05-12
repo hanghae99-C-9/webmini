@@ -1,55 +1,41 @@
-from flask import Flask, render_template, jsonify, request
 
+from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 from pymongo import MongoClient
-import certifi
-ca = certifi.where()
-client = MongoClient('mongodb+srv://test:sparta@cluster0.7o347.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
-db = client.dbsparta_plus_week1
-
-from datetime import datetime
+client = MongoClient('mongodb+srv://test:sparta@cluster0.ryfyy.mongodb.net/Cluster0?retryWrites=true&w=majority')
+db = client.dbsparta
 
 
 @app.route('/')
-def home():
-    return render_template('index.html')
+def main1():
+    return render_template('main1.html')
 
+@app.route('/main2')
+def main2():
+    return render_template('main2.html')
 
-@app.route('/diary', methods=['GET'])
-def show_diary():
-    diaries = list(db.diary.find({}, {'_id': False}))
-    return jsonify({'all_diary': diaries})
-# fffakdjfandkfn
+@app.route('/main3')
+def main3():
+    return render_template('main3.html')
 
-@app.route('/diary', methods=['POST'])
-def save_diary():
-    title_receive = request.form['title_give']
-    content_receive = request.form['content_give']
-
-    file = request.files["file_give"]
-
-    extension = file.filename.split('.')[-1]
-
-    today = datetime.now()
-    mytime = today.strftime('%Y-%m-%d-%H-%M-%S')
-
-    filename = f'file-{mytime}'
-
-    save_to = f'static/{filename}.{extension}'
-    file.save(save_to)
+@app.route("/content", methods=["POST"])
+def modal_post():
+    content_receive = request.form['content_send']
 
     doc = {
-        'title': title_receive,
-        'content': content_receive,
-        'file': f'{filename}.{extension}',
-        'time': today.strftime('%Y.%m.%d')
+    'content': content_receive
     }
 
-    db.diary.insert_one(doc)
+    db.diary_content.insert_one(doc)
 
-    return jsonify({'msg': '저장 완료!'})
+    return jsonify({'msg':'저장 완료!'})
 
+@app.route("/content", methods=["GET"])
+def modal_get():
+    content_list = list(db.diary_content.find({}, {'_id': False}))
+    return jsonify({'diary_content':content_list })
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
+
