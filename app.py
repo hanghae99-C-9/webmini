@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
@@ -19,7 +20,7 @@ def main3():
     return render_template('main3.html')
 
 @app.route("/content", methods=["POST"])
-def homework_post():
+def modal_post():
     content_receive = request.form['content_send']
 
     doc = {
@@ -31,9 +32,10 @@ def homework_post():
     return jsonify({'msg':'저장 완료!'})
 
 @app.route("/content", methods=["GET"])
-def homework_get():
+def modal_get():
     content_list = list(db.diary_content.find({}, {'_id': False}))
     return jsonify({'diary_content':content_list })
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
+
